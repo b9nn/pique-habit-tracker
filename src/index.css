@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body {
+    @apply bg-paper text-ink-900 antialiased font-sans;
+    -webkit-font-smoothing: antialiased;
+  }
+  /* Make inputs/buttons inherit font */
+  button, input, textarea, select { font: inherit; }
+}
+
+@layer components {
+  .pique-script {
+    @apply font-script text-brand-500 leading-none;
+    font-weight: 400;
+  }
+  .pique-sub {
+    @apply font-sans font-black uppercase tracking-wider text-ink-900;
+    letter-spacing: 0.08em;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-500 px-8 py-3.5 text-base font-bold text-white transition hover:bg-brand-600 active:scale-[0.98] focus:outline-none focus:ring-4 focus:ring-brand-500/30;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-full border border-ink-300/40 px-6 py-3 text-sm font-semibold text-ink-700 transition hover:bg-tile-muted;
+  }
+  .field {
+    @apply w-full rounded-full border border-ink-900/20 bg-transparent px-5 py-3.5 text-ink-900 placeholder-ink-300 focus:outline-none focus:ring-2 focus:ring-brand-500/40 focus:border-brand-500 transition;
+  }
+  .pill {
+    @apply inline-flex items-center rounded-full border border-ink-900 bg-transparent px-4 py-2 text-sm font-medium text-ink-900 transition cursor-pointer select-none;
+  }
+  .pill-selected {
+    @apply bg-ink-900 text-white border-ink-900;
+  }
+  .tile {
+    @apply rounded-2xl p-5;
+  }
+  .tile-mint { @apply bg-tile-mint text-ink-900; }
+  .tile-blue { @apply bg-tile-blue text-ink-900; }
+  .tile-gray { @apply bg-tile-gray text-white; }
+  .tile-dark { @apply bg-tile-dark text-white; }
+  .tile-muted { @apply bg-tile-muted text-ink-900; }
+}
+
+/* Hide scrollbars on horizontal pill rows */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { scrollbar-width: none; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #cfe2d6; border-radius: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
